@@ -1,0 +1,9 @@
+{% component 'components:view.rows' %}
+    {% set rating = createModel('Share','share').get() %}
+    {% set items = paginate(rating,'share') %}
+    {% for item in items.getItems() %}
+    <tr>
+        <td>...</td>
+    </tr>
+    {% endfor %}
+{% endcomponent %}

@@ -1,0 +1,8 @@
+{
+    "update": "Share button was updated successfully.",
+    "delete": "Share button was deleted successfully.",   
+    "errors": {
+        "update": "Can't save share butgton.",
+        "delete": "Can't delete share button"        
+    }
+}

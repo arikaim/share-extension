@@ -1,0 +1,18 @@
+{
+    "title": "Share",
+    "icon": "share alternate",
+    "class": "Share",
+    "type": "user",
+    "description": "Share buttons",
+    "short_description": "Share buttons.",
+    "version": "1.0",
+    "position": "3",
+    "repository": "https://github.com/arikaim/share-extension.git",
+    "admin_menu": {        
+        "title": "Share",
+        "icon": "star",
+        "page_title": "Share",
+        "page_icon": "share alternate",       
+        "component": "share::admin"
+    }
+}

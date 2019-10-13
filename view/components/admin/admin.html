@@ -1,0 +1,11 @@
+{%  set items = [ 
+        { id: 'view_share',title: labels.view, icon: 'list', active: true },                 
+        { id: 'settings',title: labels.settings, icon: 'cogs' }    
+    ] 
+%}
+
+{{  component('components:tabs',{ 
+        items: items,
+        content: { component: 'share::admin.view' } 
+    })
+}}
