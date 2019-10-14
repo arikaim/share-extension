@@ -2,5 +2,12 @@
     "title": {
         "content": "View",
         "icon": "list"              
+    },
+    "columns": {
+        "action": "Action",
+        "name": "Name",     
+        "status": "Status",      
+        "title": "Title",
+        "description": "Description"            
     }
 }

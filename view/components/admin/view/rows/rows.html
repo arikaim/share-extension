@@ -1,9 +1,17 @@
 {% component 'components:view.rows' %}
-    {% set rating = createModel('Share','share').get() %}
-    {% set items = paginate(rating,'share') %}
+    {% set share = createModel('Share','share') %}
+    {% set items = paginate(share,'share') %}
     {% for item in items.getItems() %}
     <tr>
-        <td>...</td>
+        <td>
+            
+        </td>
+        <td>
+
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
     </tr>
     {% endfor %}
 {% endcomponent %}

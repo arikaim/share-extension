@@ -30,4 +30,20 @@ class Share extends Model
     ];
     
     public $timestamps = false;
+
+
+    public function hasButton($name)
+    {
+
+    }
+
+    public function saveButton(array $data)
+    {
+
+    } 
+
+    public function remove($id)
+    {
+
+    }
 }

@@ -1,7 +1,18 @@
-
-
-<div class="mt-10" id="share_rows" component="share::admin.view.rows" namespace="share">
-    {{ component('share::admin.view.rows') }}   
+<div class="mt-4">
+    <table class="ui compact stackable selectable borderless basic table">
+        <thead class="table-head">
+            <tr>              
+                <th class="one wide collapsing left aligned">{{ columns.action }}</th>
+                <th class="one wide">{{ columns.status }}</th>              
+                <th class="two wide">{{ columns.name }}</th>   
+                <th class="two wide">{{ columns.title }}</th>         
+                <th class="two wide">{{ columns.description }}</th>                                                            
+            </tr>
+        </thead>
+        <tbody id="share_rows" component="share::admin.view.rows" namespace="share">
+            {{ component('share::admin.view.rows') }}   
+        </tbody>
+    </table>
 </div>
 <div class="mt-2">
     {{ component('components:paginator',{ namespace: 'share' }) }}

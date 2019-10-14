@@ -10,6 +10,7 @@
 namespace Arikaim\Extensions\Share\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
+use Arikaim\Core\Utils\Utils;
 
 /**
  * Share buttons db table
@@ -54,5 +55,16 @@ class ShareSchema extends Schema
      */
     public function update($table) 
     {              
+    }
+
+    /**
+     * Insert or update rows in table
+     *
+     * @param Builder $query
+     * @return void
+     */
+    public function seeds($query)
+    {       
+        $query->updateOrInsert(['name' => 'facebook'],['uuid' => Utils::createUUID(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
     }
 }
