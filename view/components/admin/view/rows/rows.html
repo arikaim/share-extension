@@ -1,13 +1,15 @@
 {% component 'components:view.rows' %}
-    {% set share = createModel('Share','share') %}
-    {% set items = paginate(share,'share') %}
-    {% for item in items.getItems() %}
+    {% set share = createModel('Share','share').where('id','>',0) %}
+    {% set items = paginate(share,'share') %}  
+    {% for item in items.getItems() %} 
     <tr>
         <td>
-            
+            <button class="ui icon mini basic button settings-button" {{ buttons.settings.title|attr('title') }} uuid="{{ item.uuid }}">
+                <i class="icon cogs"></i>
+            </button> 
         </td>
         <td>
-
+            {{ component('components:status.dropdown',{ status: item.status, uuid: item.uuid, skip: [2,3,4,5] }) }}         
         </td>
         <td>{{ item.name }}</td>
         <td>{{ item.title }}</td>

@@ -13,10 +13,12 @@ use Illuminate\Database\Eloquent\Model;
 
 use Arikaim\Core\Traits\Db\Uuid;
 use Arikaim\Core\Traits\Db\Find;
+use Arikaim\Core\Traits\Db\Status;
 
 class Share extends Model  
 {
-    use Uuid,       
+    use Uuid,    
+        Status,   
         Find;
        
     protected $table = "share_buttons";

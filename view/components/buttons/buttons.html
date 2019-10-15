@@ -1,0 +1,5 @@
+{% set buttons = createModel('Share','share').getActiove() %}
+
+{% for button in buttons %}
+{{ component('share::buttons.' ~ button.name,{ options: button.options, class: class }) }}
+{% endfor %}

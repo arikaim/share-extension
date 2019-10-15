@@ -13,25 +13,29 @@ function ShareButtonsView() {
     var self = this;
 
     this.init = function() {
-        var component = arikaim.component.get('share::admin');
-        var remove_message = component.getProperty('messages.remove.content');
-      
-        paginator.init('share_rows');
-        arikaim.ui.button('.delete-button',function(element) {
-            var uuid = $(element).attr('uuid');
-            var title = $(element).attr('data-title');
-
-            var message = arikaim.ui.template.render(remove_message,{ title: title });
-            modal.confirmDelete({ 
-                title: component.getProperty('messages.remove.title'),
-                description: message
-            },function() {
-                rating.delete(uuid,function(result) {
-                    $('#' + uuid).remove();                             
-                });
-            });
-        });
+        paginator.init('share_rows');    
     };
+
+    this.initRows = function() {    
+
+        $('.status-dropdown').dropdown({
+            onChange: function(value) {
+                var uuid = $(this).attr('uuid');
+                shareControlPanel.setStatus(uuid,value);               
+            }
+        });
+
+        arikaim.ui.button('.settings-button',function(element) {
+            var uuid = $(element).attr('uuid');
+            arikaim.ui.setActiveTab('#share_settings');
+
+            arikaim.page.loadContent({
+                id: 'tab_content',
+                component: 'share::admin.settings',
+                params: { uuid: uuid }
+            }); 
+        });
+    }
 }
 
 var shareButtonsView = new ShareButtonsView();

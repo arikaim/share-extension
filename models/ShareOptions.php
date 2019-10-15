@@ -11,8 +11,6 @@ namespace Arikaim\Extensions\Share\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Arikaim\Extensions\Rating\Models\RatingLogs;
-
 use Arikaim\Core\Traits\Db\Uuid;
 use Arikaim\Core\Traits\Db\Find;
 use Arikaim\Core\Traits\Db\Options;
@@ -31,12 +29,11 @@ class ShareOptions extends Model
         'value',
         'title',
         'description',
-        'read_only',
+        'readonly',
         'hidden',
+        'default',
         'type'      
     ];
     
     public $timestamps = false;
-
-    
 }

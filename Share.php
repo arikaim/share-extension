@@ -23,12 +23,9 @@ class Share extends Extension
     */
     public function install()
     {
-      
         // Control Panel
-      //  $this->addApiRoute('POST','/api/rating/admin/add','RatingControlPanel','add','session');      
-       // $this->addApiRoute('DELETE','/api/rating/admin/delete/{uuid}','RatingControlPanel','delete','session');          
-        // Create db tables
-        
+        $this->addApiRoute('PUT','/api/share/admin/status','ShareControlPanel','setStatus','session');             
+        // Db tables
         $this->createDbTable('ShareSchema');  
         $this->createDbTable('ShareOptionsSchema');
        

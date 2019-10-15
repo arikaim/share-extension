@@ -11,7 +11,7 @@ namespace Arikaim\Extensions\Share\Controllers;
 
 use Arikaim\Core\Db\Model;
 use Arikaim\Core\Controllers\ApiController;
-use Arikaim\Core\Tratis\Controller\Status;
+use Arikaim\Core\Traits\Controller\Status;
 
 /**
  * Share control panel controler
@@ -35,10 +35,10 @@ class ShareControlPanel extends ApiController
      *
      * @return void
      */
-    public function __cosntruct()
+    public function __construct()
     {
-        parent::__cosntruct();
+        parent::__construct();
         $this->setExtensionName('share');
-        $this->setModelName('Share');
+        $this->setModelClass('Share');
     }
 }

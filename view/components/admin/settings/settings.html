@@ -1,0 +1,11 @@
+{% component 'components:tabs.vertical.content' %}
+{% set share = createModel('Share','share').findById(uuid) %}
+<div class="mt-4">
+    <div class="ui segment padded">
+        {{ component('share::admin.dropdown',{ selected: uuid }) }}
+    </div>
+    <form class="ui form" id="share_settings">
+          
+    </form> 
+</div>
+{% endcomponent %}
