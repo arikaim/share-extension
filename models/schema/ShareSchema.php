@@ -44,7 +44,7 @@ class ShareSchema extends Schema
         $table->string('namespace')->nullable(true); 
         $table->integer('click_count')->nullable(false)->default(0);  
         // index       
-        $table->unique(['name','user_id']);   
+        $table->unique(['name']);   
     }
 
     /**
@@ -66,5 +66,6 @@ class ShareSchema extends Schema
     public function seeds($query)
     {       
         $query->updateOrInsert(['name' => 'facebook'],['uuid' => Utils::createUUID(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
+        $query->updateOrInsert(['name' => 'twitter'],['uuid' => Utils::createUUID(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]); 
     }
 }

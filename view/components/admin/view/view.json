@@ -5,7 +5,8 @@
     },
     "columns": {
         "action": "Action",
-        "name": "Name",     
+        "name": "Name",  
+        "preview": "Preview",   
         "status": "Status",      
         "title": "Title",
         "description": "Description"            

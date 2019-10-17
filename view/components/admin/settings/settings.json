@@ -4,8 +4,6 @@
         "icon": "cogs"
     },
     "labels": {
-        "single_ip": "Single rating per IP Address",
-        "single_user": "Single rating per User",
-        "anonymous": "Allow anonymous rating"
+        "options": "Options"
     }
 }

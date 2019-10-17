@@ -1,1 +1,17 @@
-
+{% set share = createModel('Share','share')%}
+{% set item_selected = share.findById(selected) %}
+{% set id = id|default('share_dropdown') %}
+<div class="ui dropdown icon basic button {{ class }}" {{ title|attr('title') }} {{ id|attr('id') }} {{ attributes|attr }}>   
+    <i class="icon share alternate"></i>
+    <div class="text">
+        {{ item_selected.title|default(labels.choose) }}
+    </div>  
+    <i class="icon dropdown"></i> 
+    <div class="menu">        
+        {% for item in share.get() %}
+        <div class="item" data-value="{{ item.id }}">          
+            {{ item.title }}
+        </div>   
+        {% endfor %}          
+    </div>
+</div>

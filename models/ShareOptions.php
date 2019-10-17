@@ -32,7 +32,8 @@ class ShareOptions extends Model
         'readonly',
         'hidden',
         'default',
-        'type'      
+        'type',
+        'items'      
     ];
     
     public $timestamps = false;

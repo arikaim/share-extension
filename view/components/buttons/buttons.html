@@ -1,5 +1,7 @@
-{% set buttons = createModel('Share','share').getActiove() %}
+{% set buttons = createModel('Share','share').getActive() %}
 
-{% for button in buttons %}
-{{ component('share::buttons.' ~ button.name,{ options: button.options, class: class }) }}
+<div {{ class|attr('class') }}>
+{% for button in buttons.get() %}
+{{ component('share::buttons.' ~ button.name,{ options: button.options.keyBy('key'), button_class: button_class }) }}
 {% endfor %}
+</div>
