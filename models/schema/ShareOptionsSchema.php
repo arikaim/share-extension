@@ -86,6 +86,19 @@ class ShareOptionsSchema extends Schema
             'items'         => \json_encode($items)
         ]); 
 
+        // class option
+        $query->updateOrInsert([
+            'reference_id' => $share->id,
+            'key' => 'class',
+        ],[
+            'reference_id'  => $share->id,
+            'key'           => 'class',
+            'title'         => 'Css Class',
+            'description'   => "Css button class.",
+            'default'       => '',
+            'type'          => Options::$TEXT            
+        ]); 
+
         // Twitter
         $share = Self::getQuery('share_buttons')->where('name','=','twitter')->first();
         // text option
@@ -151,6 +164,19 @@ class ShareOptionsSchema extends Schema
             'key'           => 'related',
             'title'         => 'Related',
             'description'   => "A comma-separated list of accounts related to the content of the shared URI.",
+            'default'       => '',
+            'type'          => Options::$TEXT            
+        ]); 
+
+        // class option
+        $query->updateOrInsert([
+            'reference_id' => $share->id,
+            'key' => 'class',
+        ],[
+            'reference_id'  => $share->id,
+            'key'           => 'class',
+            'title'         => 'Css Class',
+            'description'   => "Css button class.",
             'default'       => '',
             'type'          => Options::$TEXT            
         ]); 

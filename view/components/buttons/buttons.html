@@ -2,6 +2,8 @@
 
 <div {{ class|attr('class') }}>
 {% for button in buttons.get() %}
+<div {{ item_class|attr('class') }}>
 {{ component('share::buttons.' ~ button.name,{ options: button.options.keyBy('key'), button_class: button_class }) }}
+</div>
 {% endfor %}
 </div>
