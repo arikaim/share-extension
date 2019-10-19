@@ -1,7 +1,7 @@
 {
     "include": {
         "js": [
-            "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"
+            "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0|crossorigin"
         ]
     }
 }
