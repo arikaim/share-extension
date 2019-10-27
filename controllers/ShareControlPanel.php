@@ -9,7 +9,6 @@
 */
 namespace Arikaim\Extensions\Share\Controllers;
 
-use Arikaim\Core\Db\Model;
 use Arikaim\Core\Controllers\ApiController;
 use Arikaim\Core\Traits\Controller\Status;
 

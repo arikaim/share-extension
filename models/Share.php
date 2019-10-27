@@ -17,12 +17,20 @@ use Arikaim\Core\Traits\Db\Uuid;
 use Arikaim\Core\Traits\Db\Find;
 use Arikaim\Core\Traits\Db\Status;
 
+/**
+ * Share model class
+ */
 class Share extends Model  
 {
     use Uuid,    
         Status,   
         Find;
-       
+    
+    /**
+     * Table name
+     *
+     * @var string
+     */
     protected $table = "share_buttons";
 
     protected $fillable = [
@@ -35,23 +43,13 @@ class Share extends Model
     
     public $timestamps = false;
 
+    /**
+     * Options relation
+     *
+     * @return mixed
+     */
     public function options()
     {
         return $this->hasMany(ShareOptions::class,'reference_id');
-    }
-
-    public function hasButton($name)
-    {
-
-    }
-
-    public function saveButton(array $data)
-    {
-
-    } 
-
-    public function remove($id)
-    {
-
     }
 }

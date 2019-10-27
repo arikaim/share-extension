@@ -6,6 +6,7 @@
 
 {{  component('components:tabs',{ 
         items: items,
+        menu: { component: 'system:admin.extensions.menu.actions', extension: 'share' },
         content: { component: 'share::admin.view' } 
     })
 }}

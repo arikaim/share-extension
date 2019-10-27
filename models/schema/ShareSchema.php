@@ -22,7 +22,7 @@ class ShareSchema extends Schema
      *
      * @var string
      */
-    protected $table_name = "share_buttons";
+    protected $tableName = "share_buttons";
 
     /**
      * Create table
@@ -65,7 +65,13 @@ class ShareSchema extends Schema
      */
     public function seeds($query)
     {       
-        $query->updateOrInsert(['name' => 'facebook'],['uuid' => Utils::createUUID(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
-        $query->updateOrInsert(['name' => 'twitter'],['uuid' => Utils::createUUID(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]); 
+        $query->updateOrInsert(
+            ['name' => 'facebook'],
+            ['uuid' => Utils::createUUID(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
+
+        $query->updateOrInsert(
+            ['name' => 'twitter'],
+            ['uuid' => Utils::createUUID(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]
+        ); 
     }
 }

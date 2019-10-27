@@ -15,12 +15,20 @@ use Arikaim\Core\Traits\Db\Uuid;
 use Arikaim\Core\Traits\Db\Find;
 use Arikaim\Core\Traits\Db\Options;
 
+/**
+ * ShareOptions model class
+ */
 class ShareOptions extends Model  
 {
     use Uuid,       
         Options,
         Find;
-       
+    
+    /**
+     * Table name
+     *
+     * @var string
+     */
     protected $table = "share_buttons_options";
 
     protected $fillable = [

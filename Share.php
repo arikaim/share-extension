@@ -32,9 +32,16 @@ class Share extends Extension
         return true;
     }
     
+    /**
+     * UnInstall
+     *
+     * @return boolean
+     */
     public function unInstall()
     {
         $this->dropDbTable('ShareOptionsSchema');       
-        $this->dropDbTable('ShareSchema');          
+        $this->dropDbTable('ShareSchema');    
+        
+        return true;      
     }
 }
