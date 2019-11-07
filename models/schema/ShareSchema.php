@@ -4,13 +4,13 @@
  *
  * @link        http://www.arikaim.com
  * @copyright   Copyright (c) 2016-2018 Konstantin Atanasov <info@arikaim.com>
- * @license     http://www.arikaim.com/license.html
+ * @license     http://www.arikaim.com/license
  * 
 */
 namespace Arikaim\Extensions\Share\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
-use Arikaim\Core\Utils\Utils;
+use Arikaim\Core\Utils\Uuid;
 
 /**
  * Share buttons db table
@@ -67,11 +67,11 @@ class ShareSchema extends Schema
     {       
         $query->updateOrInsert(
             ['name' => 'facebook'],
-            ['uuid' => Utils::createUUID(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
+            ['uuid' => Uuid::create(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
 
         $query->updateOrInsert(
             ['name' => 'twitter'],
-            ['uuid' => Utils::createUUID(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]
+            ['uuid' => Uuid::create(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]
         ); 
     }
 }
