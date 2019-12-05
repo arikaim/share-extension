@@ -3,14 +3,14 @@
  * Arikaim
  *
  * @link        http://www.arikaim.com
- * @copyright   Copyright (c) 2016-2018 Konstantin Atanasov <info@arikaim.com>
+ * @copyright   Copyright (c)  Konstantin Atanasov <info@arikaim.com>
  * @license     http://www.arikaim.com/license
  * 
 */
 namespace Arikaim\Extensions\Share\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
-use Arikaim\Core\Traits\Db\Options;
+use Arikaim\Core\Db\Traits\Options;
 
 /**
  * Share buttons db table

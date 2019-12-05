@@ -5,8 +5,6 @@
  *  @license    http://www.arikaim.com/license
  *  http://www.arikaim.com
  * 
- *  Extension: Share
- *  Component: share::admin.view
 */
 
 function ShareButtonsView() {

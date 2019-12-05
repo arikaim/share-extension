@@ -3,14 +3,14 @@
  * Arikaim
  *
  * @link        http://www.arikaim.com
- * @copyright   Copyright (c) 2016-2018 Konstantin Atanasov <info@arikaim.com>
+ * @copyright   Copyright (c)  Konstantin Atanasov <info@arikaim.com>
  * @license     http://www.arikaim.com/license
  * 
 */
 namespace Arikaim\Extensions\Share\Controllers;
 
 use Arikaim\Core\Controllers\ApiController;
-use Arikaim\Core\Traits\Controller\Status;
+use Arikaim\Core\Controllers\Traits\Status;
 
 /**
  * Share control panel controler
@@ -31,12 +31,14 @@ class ShareControlPanel extends ApiController
 
     /**
      * Constructor
-     *
+     * 
+     * @param Container $container
      * @return void
      */
-    public function __construct()
+    public function __construct($container)
     {
-        parent::__construct();
+        parent::__construct($container);
+        
         $this->setExtensionName('share');
         $this->setModelClass('Share');
     }
