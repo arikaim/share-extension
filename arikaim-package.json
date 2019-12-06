@@ -2,7 +2,6 @@
     "title": "Share",
     "name": "share",
     "package-type": "extension",
-    "class": "Share",
     "type": "user",
     "description": "Share buttons",
     "short-description": "Share buttons.",
