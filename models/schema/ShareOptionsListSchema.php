@@ -10,19 +10,20 @@
 namespace Arikaim\Extensions\Share\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
-use Arikaim\Core\Db\Model;
+use Arikaim\Core\Utils\Uuid;
+use Arikaim\Core\Extension\Extension;
 
 /**
- * Share buttons db table
+ * Share options list db table
  */
-class ShareOptionsSchema extends Schema  
+class ShareOptionsListSchema extends Schema  
 {    
     /**
      * Table name
      *
      * @var string
      */
-    protected $tableName = "share_options";
+    protected $tableName = "share_options_list";
 
     /**
      * Create table
@@ -32,7 +33,7 @@ class ShareOptionsSchema extends Schema
      */
     public function create($table) 
     {            
-        $table->tableOptions('share_option_type','share_buttons',function($table) {
+        $table->tableOptionsList(function($table) {
 
         });
     }
@@ -54,21 +55,13 @@ class ShareOptionsSchema extends Schema
      * @return void
      */
     public function seeds($seed)
-    {    
-        $options = Model::ShareOptions('share');
-    
-        // Create options
+    {       
+        $items = Extension::loadJsonConfigFile('buttons-options-list.json','share');
         
-        // facebook
-        $share = Self::getQuery('share_buttons')->where('name','=','facebook')->first();
-        $options->createOptions($share->id,'facebook');
-       
-        // twitter
-        $share = Self::getQuery('share_buttons')->where('name','=','twitter')->first();
-        $options->createOptions($share->id,'twitter');
-
-        // pinterest
-        $share = Self::getQuery('share_buttons')->where('name','=','pinterest')->first();
-        $options->createOptions($share->id,'pinterest');
+        $seed->createFromArray(['key','type_name'],$items,function($item) {
+            $item['uuid'] = Uuid::create();
+        
+            return $item;
+        });
     }
 }

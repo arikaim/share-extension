@@ -16,6 +16,7 @@ use Arikaim\Extensions\Share\Models\ShareOptions;
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\Status;
+use Arikaim\Core\Db\Traits\Options\OptionsRelation;
 
 /**
  * Share model class
@@ -24,6 +25,7 @@ class Share extends Model
 {
     use Uuid,    
         Status,   
+        OptionsRelation,
         Find;
     
     /**
@@ -33,6 +35,11 @@ class Share extends Model
      */
     protected $table = "share_buttons";
 
+    /**
+     * Fillable attributes
+     *
+     * @var array
+     */
     protected $fillable = [
         'namespace',
         'name',
@@ -41,15 +48,17 @@ class Share extends Model
         'status'      
     ];
     
+    /**
+     * Disable timestamps
+     *
+     * @var boolean
+     */
     public $timestamps = false;
 
     /**
-     * Options relation
+     * Options class name
      *
-     * @return mixed
+     * @var string
      */
-    public function options()
-    {
-        return $this->hasMany(ShareOptions::class,'reference_id');
-    }
+    protected $optionsClass = ShareOptions::class;
 }

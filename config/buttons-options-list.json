@@ -1,0 +1,54 @@
+[
+    {
+        "type_name": "facebook",
+        "key": "data-layout" 
+    },
+    {
+        "type_name": "facebook",
+        "key": "button-size" 
+    },
+    {
+        "type_name": "facebook",
+        "key": "class" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "text" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "size" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "hashtags" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "via" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "related" 
+    },
+    {
+        "type_name": "twitter",
+        "key": "class" 
+    },
+    {
+        "type_name": "pinterest",
+        "key": "data-pin-save" 
+    },
+    {
+        "type_name": "pinterest",
+        "key": "data-pin-do" 
+    },
+    {
+        "type_name": "pinterest",
+        "key": "data-pin-round" 
+    },
+    {
+        "type_name": "pinterest",
+        "key": "data-pin-tall" 
+    }
+]

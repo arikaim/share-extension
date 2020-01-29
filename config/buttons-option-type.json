@@ -1,0 +1,92 @@
+[
+    {
+        "key": "data-layout",
+        "title": "Layout",
+        "description": "Selects one of the different layouts that are available.",
+        "default": "button",
+        "type": "dropdown",
+        "items": {
+            "box_count": "Box count",
+            "button_count": "Button count",
+            "button" :"Button"
+        }
+    },
+    {
+        "key": "button-size",
+        "title": "Size",
+        "description": "Button size.",
+        "default": "large",
+        "type": "dropdown",
+        "items": {
+            "large": "Large",
+            "small": "Small"               
+        }
+    },
+    {
+        "key": "class",
+        "title": "Css Class",
+        "description": "Css button class.",
+        "default": "",
+        "type": "text"          
+    },
+    {
+        "key": "text",
+        "title": "Text",
+        "description": "Pre-populated text highlighted in the Tweet composer.",
+        "default": "",
+        "type": "text"          
+    },
+    {
+        "key": "hashtags",
+        "title": "Hashtags",
+        "description": "A comma-separated list of hashtags to be appended to default Tweet text.",
+        "default": "",
+        "type": "text"          
+    },
+    {
+        "key": "via",
+        "title": "Via",
+        "description": "Attribute the source of a Tweet to a Twitter username.",
+        "default": "",
+        "type": "text"          
+    },
+    {
+        "key": "related",
+        "title": "Related",
+        "description": "A comma-separated list of accounts related to the content of the shared URI.",
+        "default": "",
+        "type": "text"          
+    },
+    {
+        "key": "data-pin-save",
+        "title": "Data pin save",
+        "description": "If set to false, show an old-style 'Pin It' button. (Not recommended for non-English sites.)",
+        "default": "true",
+        "type": "checkbox"          
+    },
+    {
+        "key": "data-pin-do",
+        "title": "Data pin do",
+        "description": "Determines whether the Pinner can save any image from the page.",       
+        "default": "buttonPin",
+        "type": "dropdown",
+        "items": {
+            "buttonPin": "One image",
+            "buttonBookmark": "Any image"               
+        }   
+    },
+    {
+        "key": "data-pin-round",
+        "title": "Data pin round",
+        "description": "Changes the Save button to the round and red style.",
+        "default": "true",
+        "type": "checkbox"          
+    },
+    {
+        "key": "data-pin-tall",
+        "title": "Data pin tall",
+        "description": "Changes the height of the Save button.",
+        "default": "true",
+        "type": "checkbox"          
+    }
+]

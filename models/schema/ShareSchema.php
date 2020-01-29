@@ -60,18 +60,33 @@ class ShareSchema extends Schema
     /**
      * Insert or update rows in table
      *
-     * @param Builder $query
+     * @param Seed $seed
      * @return void
      */
-    public function seeds($query)
+    public function seeds($seed)
     {       
-        $query->updateOrInsert(
-            ['name' => 'facebook'],
-            ['uuid' => Uuid::create(),'name' => 'facebook','title' => 'Facebook','description' => "Facebook share button"]); 
+        $seed->create(['name' => 'facebook'],
+        [
+            'uuid'        => Uuid::create(),
+            'name'        => 'facebook',
+            'title'       => 'Facebook',
+            'description' => 'Facebook share button'
+        ]); 
 
-        $query->updateOrInsert(
-            ['name' => 'twitter'],
-            ['uuid' => Uuid::create(),'name' => 'twitter','title' => 'Twitter','description' => "Twitter share button"]
-        ); 
+        $seed->create(['name' => 'twitter'],
+        [
+            'uuid'        => Uuid::create(),
+            'name'        => 'twitter',
+            'title'       => 'Twitter',
+            'description' => 'Twitter share button'
+        ]); 
+
+        $seed->create(['name' => 'pinterest'],
+        [
+            'uuid'        => Uuid::create(),
+            'name'        => 'pinterest',
+            'title'       => 'pinterest',
+            'description' => 'Pinterest share button'
+        ]); 
     }
 }

@@ -19,29 +19,25 @@ class Share extends Extension
     /**
      * Install extension routes, events, jobs ..
      *
-     * @return boolean
+     * @return void
     */
     public function install()
     {
         // Control Panel
-        $this->addApiRoute('PUT','/api/share/admin/status','ShareControlPanel','setStatus','session');             
+        $this->addApiRoute('PUT','/api/share/admin/status','ShareControlPanel','setStatus','session');                     
         // Db tables
+        $this->createDbTable('ShareOptionTypeSchema');
+        $this->createDbTable('ShareOptionsListSchema');
         $this->createDbTable('ShareSchema');  
         $this->createDbTable('ShareOptionsSchema');
-       
-        return true;
     }
     
     /**
      * UnInstall
      *
-     * @return boolean
+     * @return void
      */
     public function unInstall()
-    {
-        $this->dropDbTable('ShareOptionsSchema');       
-        $this->dropDbTable('ShareSchema');    
-        
-        return true;      
+    {         
     }
 }

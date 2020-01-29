@@ -11,12 +11,15 @@ namespace Arikaim\Extensions\Share\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Arikaim\Extensions\Share\Models\ShareOptionType;
+use Arikaim\Extensions\Share\Models\ShareOptionsList;
+
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
-use Arikaim\Core\Db\Traits\Options;
+use Arikaim\Core\Db\Traits\Options\Options;
 
 /**
- * ShareOptions model class
+ * Share Options model class
  */
 class ShareOptions extends Model  
 {
@@ -29,20 +32,39 @@ class ShareOptions extends Model
      *
      * @var string
      */
-    protected $table = "share_buttons_options";
+    protected $table = "share_options";
 
+    /**
+     * Fillable attributes
+     *
+     * @var array
+     */
     protected $fillable = [
-        'reference_id',
-        'key',
+        'reference_id',       
         'value',
-        'title',
-        'description',
-        'readonly',
-        'hidden',
-        'default',
-        'type',
-        'items'      
+        'key',
+        'uuid',
+        'type_id'       
     ];
-    
+
+    /**
+     * Disable timestamps
+     *
+     * @var boolean
+     */
     public $timestamps = false;
+
+    /**
+     * Option type model class 
+     *
+     * @var string
+     */
+    protected $optionTypeClass = ShareOptionType::class;
+
+    /**
+     * Options definitions model class
+     *
+     * @var string
+     */
+    protected $optionsDefinitionClass = ShareOptionsList::class;
 }

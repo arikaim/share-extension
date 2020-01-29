@@ -10,19 +10,22 @@
 namespace Arikaim\Extensions\Share\Models\Schema;
 
 use Arikaim\Core\Db\Schema;
-use Arikaim\Core\Db\Model;
+use Arikaim\Core\Utils\Uuid;
+use Arikaim\Core\Extension\Extension;
+
+use Arikaim\Core\Db\Traits\Options\OptionType;
 
 /**
- * Share buttons db table
+ * Share option type db table
  */
-class ShareOptionsSchema extends Schema  
+class ShareOptionTypeSchema extends Schema  
 {    
     /**
      * Table name
      *
      * @var string
      */
-    protected $tableName = "share_options";
+    protected $tableName = "share_option_type";
 
     /**
      * Create table
@@ -32,7 +35,7 @@ class ShareOptionsSchema extends Schema
      */
     public function create($table) 
     {            
-        $table->tableOptions('share_option_type','share_buttons',function($table) {
+        $table->tableOptionType(function($table) {
 
         });
     }
@@ -54,21 +57,16 @@ class ShareOptionsSchema extends Schema
      * @return void
      */
     public function seeds($seed)
-    {    
-        $options = Model::ShareOptions('share');
-    
-        // Create options
-        
-        // facebook
-        $share = Self::getQuery('share_buttons')->where('name','=','facebook')->first();
-        $options->createOptions($share->id,'facebook');
+    {       
+        $items = Extension::loadJsonConfigFile('buttons-option-type.json','share');
        
-        // twitter
-        $share = Self::getQuery('share_buttons')->where('name','=','twitter')->first();
-        $options->createOptions($share->id,'twitter');
+        $seed->createFromArray(['key'],$items,function($item) {
+           
+            $item['uuid'] = Uuid::create();
+            $item['type'] = OptionType::getOptionTypeId($item['type']);
+            $item['items'] = (is_array($item['items']) == true) ? \json_encode($item['items']) : $item['items'];
 
-        // pinterest
-        $share = Self::getQuery('share_buttons')->where('name','=','pinterest')->first();
-        $options->createOptions($share->id,'pinterest');
+            return $item;
+        });
     }
 }

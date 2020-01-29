@@ -1,14 +1,17 @@
 {% component 'components:tabs.vertical.content' %}
 {% set share = createModel('Share','share').findById(uuid) %}
-{% set hide_class = (share is empty) ? 'hidden' : '' %}
+
 <div class="mt-4">
     <div class="ui segment padded">
         {{ component('share::admin.dropdown',{ selected: uuid }) }}
-    </div>
-    <div class="ui mt-2 segment padded {{ hide_class }}" id="options_content">       
-        {% if uuid is not empty %}
-        {{ component('system:admin.orm.options.form',{ model: 'ShareOptions', extension: 'share', id: share.id }) }}
-        {% endif %}
-    </div> 
+    </div>    
+    {% set hide = (uuid is empty) ? true : false %}  
+    {{ component('system:admin.orm.options.edit',{ 
+        model: 'ShareOptions',
+        extension: 'share',
+        id: share.id,
+        class: 'mt-2 padded',
+        hide: hide 
+    }) }}
 </div>
 {% endcomponent %}

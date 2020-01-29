@@ -1,0 +1,11 @@
+{
+    "include": {
+        "js": [
+            "system:admin.org.options"
+        ]
+    },
+    "access": {
+        "auth": "session",
+        "permissions": "ControlPanel:full"           
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "include": {
+        "js": [
+            "https://assets.pinterest.com/js/pinit.js|crossorigin|async"
+        ]
+    }
+}
