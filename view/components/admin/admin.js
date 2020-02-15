@@ -1,11 +1,10 @@
 /**
  *  Arikaim
- *  
  *  @copyright  Copyright (c) Konstantin Atanasov <info@arikaim.com>
  *  @license    http://www.arikaim.com/license
  *  http://www.arikaim.com
- * 
  */
+'use strict';
 
 function ShareControlPanel() {
     var self = this;
@@ -15,6 +14,7 @@ function ShareControlPanel() {
             status: status,
             uuid: uuid 
         };
+        
         return arikaim.put('/api/share/admin/status',data,onSuccess,onError);           
     };
 

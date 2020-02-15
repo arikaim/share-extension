@@ -13,6 +13,7 @@ Arikaim CMS Share extension
 
 
 #### Installation
+
 ```sh
 composer require arikaim/share-extension
 ```
