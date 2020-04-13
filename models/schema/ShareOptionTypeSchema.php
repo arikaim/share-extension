@@ -64,7 +64,8 @@ class ShareOptionTypeSchema extends Schema
            
             $item['uuid'] = Uuid::create();
             $item['type'] = OptionType::getOptionTypeId($item['type']);
-            $item['items'] = (is_array($item['items']) == true) ? \json_encode($item['items']) : $item['items'];
+            $items = (isset($item['items']) == true) ? $item['items'] : null;
+            $item['items'] = (is_array($items) == true) ? \json_encode($items) : $items;
 
             return $item;
         });

@@ -9,13 +9,14 @@
 */
 namespace Arikaim\Extensions\Share\Controllers;
 
+use Arikaim\Core\Controllers\ControlPanelApiInterface;
 use Arikaim\Core\Controllers\ApiController;
 use Arikaim\Core\Controllers\Traits\Status;
 
 /**
  * Share control panel controler
 */
-class ShareControlPanel extends ApiController
+class ShareControlPanel extends ApiController implements ControlPanelApiInterface
 {
     use Status;
 
