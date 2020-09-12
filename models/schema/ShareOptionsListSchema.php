@@ -34,7 +34,6 @@ class ShareOptionsListSchema extends Schema
     public function create($table) 
     {            
         $table->tableOptionsList(function($table) {
-
         });
     }
 

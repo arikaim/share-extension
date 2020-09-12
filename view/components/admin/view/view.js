@@ -7,14 +7,12 @@
 'use strict';
 
 function ShareButtonsView() {
-    var self = this;
-
+   
     this.init = function() {
         paginator.init('share_rows');    
     };
 
     this.initRows = function() {    
-
         $('.status-dropdown').dropdown({
             onChange: function(value) {
                 var uuid = $(this).attr('uuid');
@@ -37,6 +35,6 @@ function ShareButtonsView() {
 
 var shareButtonsView = new ShareButtonsView();
 
-arikaim.page.onReady(function() {
+$(document).ready(function() {
     shareButtonsView.init();   
 });

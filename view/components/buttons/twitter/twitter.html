@@ -1,9 +1,10 @@
-<a class="twitter-share-button {{ button_class }} {{ button.getOption('class').val }}"
+<a class="twitter-share-button {{ button_class }} {{ button.getOptionValue('class') }}"
   href="https://twitter.com/intent/tweet"
-  data-size="{{ button.getOption('size').val }}"
-  data-text="{{ button.getOption('text').val }}"
+  data-size="{{ button.getOptionValue('size') }}"
+  data-text="{{ button.getOptionValue('text') }}"
   data-url="{{ currentUrl() }}"
-  data-hashtags="{{ button.getOption('hashtags').val }}"
-  data-via="{{ button.getOption('via').val }}"
-  data-related="{{ button.getOption('related').val }}">
-  {{ label }}</a>
+  data-hashtags="{{ button.getOptionValue('hashtags') }}"
+  data-via="{{ button.getOptionValue('via') }}"
+  data-related="{{ button.getOptionValue('related') }}">
+  {{ label }}
+</a>

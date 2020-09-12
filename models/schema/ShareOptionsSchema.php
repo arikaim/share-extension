@@ -33,7 +33,6 @@ class ShareOptionsSchema extends Schema
     public function create($table) 
     {            
         $table->tableOptions('share_option_type','share_buttons',function($table) {
-
         });
     }
 

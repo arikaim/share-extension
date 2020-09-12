@@ -36,7 +36,6 @@ class ShareOptionTypeSchema extends Schema
     public function create($table) 
     {            
         $table->tableOptionType(function($table) {
-
         });
     }
 
@@ -61,11 +60,10 @@ class ShareOptionTypeSchema extends Schema
         $items = Extension::loadJsonConfigFile('buttons-option-type.json','share');
        
         $seed->createFromArray(['key'],$items,function($item) {
-           
             $item['uuid'] = Uuid::create();
             $item['type'] = OptionType::getOptionTypeId($item['type']);
             $items = (isset($item['items']) == true) ? $item['items'] : null;
-            $item['items'] = (is_array($items) == true) ? \json_encode($items) : $items;
+            $item['items'] = (\is_array($items) == true) ? \json_encode($items) : $items;
 
             return $item;
         });

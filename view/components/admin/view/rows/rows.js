@@ -1,5 +1,7 @@
 'use strict';
 
-$(document).ready(function() {
-    shareButtonsView.initRows();   
-});
+$(document).ready(function() {     
+    safeCall('shareButtonsView',function(obj) {
+        obj.initRows();
+    },true);   
+});    
