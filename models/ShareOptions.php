@@ -32,7 +32,7 @@ class ShareOptions extends Model
      *
      * @var string
      */
-    protected $table = "share_options";
+    protected $table = 'share_options';
 
     /**
      * Fillable attributes

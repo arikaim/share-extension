@@ -1,0 +1,11 @@
+{% set button_class = button_class|default('circular') %}
+<a class="ui button icon twitter {{ button_class }} {{ button.getOptionValue('class') }}"
+  href="https://twitter.com/intent/tweet"
+  data-size="{{ button.getOptionValue('size') }}"
+  data-text="{{ button.getOptionValue('text') }}"
+  data-url="{{ currentUrl() }}"
+  data-hashtags="{{ button.getOptionValue('hashtags') }}"
+  data-via="{{ button.getOptionValue('via') }}"
+  data-related="{{ button.getOptionValue('related') }}">
+  <i class="icon twitter"></i>
+</a>

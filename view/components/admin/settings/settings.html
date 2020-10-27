@@ -6,12 +6,13 @@
         {{ component('share::admin.dropdown',{ selected: uuid }) }}
     </div>    
     {% set hide = (uuid is empty) ? true : false %}  
-    {{ component('system:admin.orm.options.edit',{ 
-        model: 'ShareOptions',
-        extension: 'share',
-        id: share.id,
-        class: 'mt-2 padded',
-        hide: hide 
-    }) }}
+    {{  component('system:admin.orm.options.edit',{ 
+            model: 'ShareOptions',
+            extension: 'share',
+            id: share.id,
+            class: 'mt-2 padded',
+            hide: hide 
+        }) 
+    }}
 </div>
 {% endcomponent %}

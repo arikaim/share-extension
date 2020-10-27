@@ -1,0 +1,7 @@
+{% set button_class = button_class|default('circular') %}
+<a class="ui icon pinterest button {{ button_class }}" 
+    data-pin-do="{{ button.getOptionValue('data-pin-do') }}" 
+    data-pin-custom="true"
+    href="https://www.pinterest.com/pin/create/button/">
+    <i class="pinterest icon"></i>
+</a> 

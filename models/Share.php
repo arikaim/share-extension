@@ -33,7 +33,7 @@ class Share extends Model
      *
      * @var string
      */
-    protected $table = "share_buttons";
+    protected $table = 'share_buttons';
 
     /**
      * Fillable attributes

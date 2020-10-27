@@ -10,13 +10,13 @@
 namespace Arikaim\Extensions\Share\Controllers;
 
 use Arikaim\Core\Controllers\ControlPanelApiInterface;
-use Arikaim\Core\Controllers\ApiController;
+use Arikaim\Core\Controllers\ControlPanelApiController;
 use Arikaim\Core\Controllers\Traits\Status;
 
 /**
  * Share control panel controler
 */
-class ShareControlPanel extends ApiController implements ControlPanelApiInterface
+class ShareControlPanel extends ControlPanelApiController implements ControlPanelApiInterface
 {
     use Status;
 
@@ -33,10 +33,10 @@ class ShareControlPanel extends ApiController implements ControlPanelApiInterfac
     /**
      * Constructor
      * 
-     * @param Container $container
+     * @param Container|null $container
      * @return void
      */
-    public function __construct($container)
+    public function __construct($container = null)
     {
         parent::__construct($container);
         

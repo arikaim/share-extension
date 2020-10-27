@@ -1,0 +1,7 @@
+{
+    "include": {
+        "js": [
+            "http://assets.pinterest.com/js/pinit.js|defer|async"
+        ]
+    }
+}

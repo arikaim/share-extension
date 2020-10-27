@@ -1,7 +1,8 @@
 {
     "labels": {
         "view": "View",       
-        "settings": "Setting"
+        "settings": "Setting",
+        "preview": "Preview"
     },
     "messages": {
         "remove": {

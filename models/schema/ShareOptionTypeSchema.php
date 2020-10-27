@@ -25,7 +25,7 @@ class ShareOptionTypeSchema extends Schema
      *
      * @var string
      */
-    protected $tableName = "share_option_type";
+    protected $tableName = 'share_option_type';
 
     /**
      * Create table

@@ -29,7 +29,7 @@ class ShareOptionType extends Model
      *
      * @var string
      */
-    protected $table = "share_option_type";   
+    protected $table = 'share_option_type';   
 
     /**
      * Disable timestamps

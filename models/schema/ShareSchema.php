@@ -22,7 +22,7 @@ class ShareSchema extends Schema
      *
      * @var string
      */
-    protected $tableName = "share_buttons";
+    protected $tableName = 'share_buttons';
 
     /**
      * Create table
