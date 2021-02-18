@@ -7,8 +7,7 @@
 'use strict';
 
 function ShareControlPanel() {
-    var self = this;
-
+  
     this.setStatus = function(uuid, status, onSuccess, onError) { 
         var data = { 
             status: status,
@@ -25,6 +24,6 @@ function ShareControlPanel() {
 
 var shareControlPanel = new ShareControlPanel();
 
-arikaim.page.onReady(function() {
+arikaim.component.onLoaded(function() {
     shareControlPanel.init();
 });

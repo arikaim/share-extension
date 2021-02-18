@@ -35,6 +35,6 @@ function ShareButtonsView() {
 
 var shareButtonsView = new ShareButtonsView();
 
-$(document).ready(function() {
+arikaim.component.onLoaded(function() {
     shareButtonsView.init();   
 });

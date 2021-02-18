@@ -1,11 +1,7 @@
 {
-    "include": {
-        "js": [
-            "system:admin.org.options"
-        ]
-    },
     "access": {
         "auth": "session",
+        "redirect": "/admin",
         "permission": "ControlPanel:full"           
     }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(function() {
+arikaim.component.onLoaded(function() {
     $('#share_dropdown').dropdown({
         onChange: function(value) {
             arikaim.ui.show('#options_content');
