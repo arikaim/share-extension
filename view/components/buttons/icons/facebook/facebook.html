@@ -1,6 +1,5 @@
-{% set button_class = button_class|default('circular') %}
 <button id="facebook_share_button" 
-    class="ui icon facebook button fb-share-button {{ button_class }} {{ button.getOptionValue('class') }}" 
+    class="ui icon facebook button fb-share-button {{ button_class|default('circular') }} {{ button.getOptionValue('class') }}" 
     data-href="{{ currentUrl() }}">
     <i class="icon facebook"></i>
 </button>  

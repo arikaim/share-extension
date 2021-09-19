@@ -1,6 +1,6 @@
 'use strict';
 
-$(document).ready(function() {
+arikaim.component.onLoaded(function() {
     $('#facebook_share_button').on('click', function () {     
         var url = window.location.href;
         window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
