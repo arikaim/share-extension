@@ -1,4 +1,5 @@
+{% set text = (text is empty) ? button.getOptionValue('text') : text %}
 <a class="ui button icon {{ button_class|default('circular') }} {{ button.getOptionValue('class') }}" target="_blank"
-    href="http://twitter.com/share?url={{ currentUrl()|url_encode }}&text={{ button.getOptionValue('text')|url_encode }}&hashtags={{ button.getOptionValue('hashtags')|url_encode }}">  
+    href="http://twitter.com/share?url={{ currentUrl()|url_encode }}&text={{ text|url_encode }}&hashtags={{ button.getOptionValue('hashtags')|url_encode }}">  
     <i class="icon twitter"></i>
 </a>

@@ -1,7 +1,11 @@
 {% set buttons = createModel('Share','share').getActive() %}
-
 <div class="{{ class }}">
 {% for button in buttons.get() %} 
-    {{ component('share::buttons.icons.' ~ button.name,{ button: button, button_class: button_class }) }}    
+    {{  component('share::buttons.icons.' ~ button.name,{ 
+            button: button, 
+            text: text,
+            button_class: button_class 
+        }) 
+    }}    
 {% endfor %}
 </div>
