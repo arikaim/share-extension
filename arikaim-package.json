@@ -5,7 +5,7 @@
     "type": "user",
     "description": "Share buttons",
     "short-description": "Share buttons.",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "position": "3",
     "repository": "https://github.com/arikaim/share-extension.git",
     "admin-menu": {        
