@@ -13,7 +13,7 @@ use Arikaim\Core\Db\Schema;
 use Arikaim\Core\Utils\Uuid;
 use Arikaim\Core\Extension\Extension;
 
-use Arikaim\Core\Db\Traits\Options\OptionType;
+use Arikaim\Core\Db\OptionType;
 
 /**
  * Share option type db table
