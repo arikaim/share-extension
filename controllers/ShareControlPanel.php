@@ -28,18 +28,6 @@ class ShareControlPanel extends ControlPanelApiController implements ControlPane
     public function init()
     {
         $this->loadMessages('share::admin.messages');
-    }
-
-    /**
-     * Constructor
-     * 
-     * @param Container|null $container
-     * @return void
-     */
-    public function __construct($container = null)
-    {
-        parent::__construct($container);
-        
         $this->setExtensionName('share');
         $this->setModelClass('Share');
     }

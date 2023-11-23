@@ -11,12 +11,10 @@ namespace Arikaim\Extensions\Share\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Arikaim\Extensions\Share\Models\ShareOptions;
-
 use Arikaim\Core\Db\Traits\Uuid;
 use Arikaim\Core\Db\Traits\Find;
 use Arikaim\Core\Db\Traits\Status;
-use Arikaim\Core\Db\Traits\Options\OptionsRelation;
+use Arikaim\Core\Db\Traits\OptionsAttribute;
 
 /**
  * Share model class
@@ -25,7 +23,7 @@ class Share extends Model
 {
     use Uuid,    
         Status,   
-        OptionsRelation,
+        OptionsAttribute,
         Find;
     
     /**
@@ -42,7 +40,7 @@ class Share extends Model
      */
     protected $fillable = [
         'namespace',
-        'name',
+        'slug',
         'title',
         'description',
         'status'      
@@ -54,11 +52,4 @@ class Share extends Model
      * @var boolean
      */
     public $timestamps = false;
-
-    /**
-     * Options class name
-     *
-     * @var string
-     */
-    protected $optionsClass = ShareOptions::class;
 }
